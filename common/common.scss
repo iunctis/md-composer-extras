@@ -9,3 +9,18 @@
 [data-wrap="justify"] {
   text-align: justify;
 }
+
+[data-wrap="columns"] {
+  width: 50%;
+  float: left;
+}
+
+[data-wrap="floatl"] {
+  float: left;
+  margin-right: 10px;
+}
+
+[data-wrap="floatr"] {
+  float: right;
+  margin-left: 10px;
+}
