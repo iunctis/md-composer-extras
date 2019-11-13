@@ -38,10 +38,26 @@ strikethrough_prompt:
   default: "Text"
   description:
     en: Enter the placeholder text that appears in the composer after the user clicks the button.
+float_left_button:
+  default: "Float left"
+  description:
+    en: Enter the text for the title of the button in the composer.
+float_left_text:
+  default: "Text"
+  description:
+    en: Enter the placeholder text that appears in the composer after the user clicks the button.
+columns_button:
+  default: "Columns"
+  description:
+    en: Enter the text for the title of the button in the composer.
+columns_text:
+  default: "Use the closing tag to mark where the column ends."
+  description:
+    en: Enter the placeholder text that appears in the composer after the user clicks the button.
 
 Svg_icons: 
   type: 'list'
   list_type: 'compact'
-  default: 'fa-align-center|fa-align-right|fa-align-justify|fa-strikethrough|fa-underline'
+  default: 'fa-align-center|fa-align-right|fa-align-justify|fa-strikethrough|fa-underline|fa-indent|fa-columns'
   description: 
     en: "Include FontAwesome 5 icon classes for each icon used in the list."
