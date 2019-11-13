@@ -13,6 +13,14 @@ api.onToolbarCreate(toolbar => {
 });
 api.onToolbarCreate(toolbar => {
     toolbar.addButton({
+        id: "strikethrough_button",
+        group: "fontStyles",
+        icon: "strikethrough",
+        perform: e => e.applySurround('<s>', '</s>', 'strikethrough_prompt')
+    });
+});
+api.onToolbarCreate(toolbar => {
+    toolbar.addButton({
         id: "align_center_button",
         group: "extras",
         icon: "align-center",
@@ -35,22 +43,21 @@ api.onToolbarCreate(toolbar => {
         perform: e => e.applySurround('[wrap="justify"]\n', '\n[/wrap]', 'align_justify_text')
     });
 });
-
-
-// EXTRAS
-api.addToolbarPopupMenuOptionsCallback(() => {
-  return {
-      action: "strikethrough",
-      icon: "strikethrough",
-      label: "strikethrough_button"
-  };
+api.onToolbarCreate(toolbar => {
+    toolbar.addButton({
+        id: "columns_button",
+        group: "extras",
+        icon: "columns",
+        perform: e => e.applySurround('[wrap="columns"]\n', '\n[/wrap]', 'columns_text')
+    });
 });
-api.modifyClass("controller:composer", {
-  actions: {
-    strikethrough() {
-      this.get("toolbarEvent").applySurround("<s>", "</s>", "strikethrough_prompt");
-    },
-  }
+api.onToolbarCreate(toolbar => {
+    toolbar.addButton({
+        id: "float_left_button",
+        group: "extras",
+        icon: "indent",
+        perform: e => e.applySurround('[wrap="floatl"]\n', '\n[/wrap]', 'float_left_text')
+    });
 });
 
 
@@ -81,4 +88,14 @@ translations.composer.align_justify_text =
 translations.strikethrough_button = settings.strikethrough_button;
 translations.composer.strikethrough_prompt =
   settings.strikethrough_prompt;
+
+translations.composer.columns_button_title = settings.columns_button;
+translations.composer.columns_text =
+  settings.columns_text;
+
+translations.composer.float_left_button_title = settings.float_left_button;
+translations.composer.float_left_text =
+  settings.float_left_text;
+
+
 </script>
